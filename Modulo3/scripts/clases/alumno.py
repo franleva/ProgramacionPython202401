@@ -29,14 +29,17 @@ class Alumno:
     aprobado = True
     def __init__(self, nombre_alumno) -> None:
         self.nombre = nombre_alumno
-        self.listado_notas = []
+        self.listado_notas = [
+            self.ingreso_nota('Ingrese la 1ra nota: '),
+            self.ingreso_nota('Ingrese la 2da nota: '),
+            self.ingreso_nota('Ingrese la 3ra nota: ')
+        ]
+
+        # for i in range(3):
+        #     nota = self.ingreso_nota(f'Ingrese la {i+1} nota: ')
+        #     self.listado_notas.append(nota)
 
         self.aprobado = self.bool_aprobado()
-
-
-        for i in range(3):
-            nota = self.ingreso_nota(f'Ingrese la {i+1} nota: ')
-            self.listado_notas.append(nota)
         pass
 
     def ingreso_nota(self, msg:str):
